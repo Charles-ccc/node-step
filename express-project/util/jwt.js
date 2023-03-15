@@ -13,9 +13,9 @@ module.exports.createToken = async (userInfo) => {
   return await toJwt(
     {userInfo},
     uuid,
-    {
-      expiresIn: '1d'
-    }
+    // {
+    //   expiresIn: '1d'
+    // }
   )
 }
 
@@ -25,11 +25,11 @@ module.exports.verifyToken = async (req, res, next) => {
   let token = req.headers.authorization
   token = token ? token.split("Bearer ")[1] : null
   if (!token) {
-    res.status(402).json({error: '请传入token'})
+    res.status(402).json({error: '请正确传入token'})
   }
   try {
     const userInfo = await verify(token, uuid)
-    req.userInfo = userInfo
+    req.user = userInfo
     next()
   } catch (err) {
     res.status(402).json({error: '无效token'})

@@ -12,12 +12,14 @@ const clientFn = async (c) => {
 
 const main = async () => {
   const cc = await clientFn('collection')
+  // 查找
   // const res = await cc.find()
-  const d = await (await cc).insertOne({username: 'wuwu', age: 80})
+  // 添加
+  const d = await cc.insertOne({username: 'wuwu', age: 80})
   console.log(d)
   // console.log(await res.toArray())
 }
-
+// 需要手动断开链接
 main().finally(() => {
   client.close()
 })

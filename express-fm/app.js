@@ -11,6 +11,7 @@ app.use(express.json())
 app.get('/', async (req,res) => {
   try {
     let back = await db.getDb()
+    // express封装的send方法，可以直接将数据转移并响应返回
     res.send(back.users)
   } catch (err) {
     res.status(500).json({err})

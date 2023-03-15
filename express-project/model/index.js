@@ -1,4 +1,5 @@
-// 导入 mongoose 模块
+// 专门用来操作数据库
+
 const mongoose = require('mongoose')
 const userSchema = require('./userModel')
 const { mongodbPath } = require('../config/config.default')
@@ -16,7 +17,7 @@ main()
 })
 
 module.exports = {
-  User:  mongoose.model('User', userSchema)
+  UserModel:  mongoose.model('User', userSchema)
 }
 
 // 参数 集合名，模型
