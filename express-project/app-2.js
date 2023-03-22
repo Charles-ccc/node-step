@@ -10,11 +10,14 @@ const PORT = process.env.PORT || 3000
 
 // })
 
+// 限定请求方法的中间件
+// 多个处理函数针对一个路由的匹配
 app.get('/user', (req, res, next) => {
   console.log('aaa')
   next()
-}, (req, res) => {
+}, (req, res, next) => {
   console.log('bbb')
+  // res.send()
   next()
 })
 

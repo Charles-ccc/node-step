@@ -28,10 +28,21 @@ app.use((err, req, res, next) => {
 
 // ? 问号前面是可选路径
 // + 加号前面的字母可以重复多次
+// * 通配，匹配任意的字符
 // 与正则表达式一致
-// app.all('/te?st', (req, res) => {
-//   res.send('xxx')
-// })
+/** 
+app.all('/te?st', (req, res) => {
+  res.send('xxx')
+  res.download()
+  res.end()
+  res.json()
+  res.redirect('/xxx')
+  res.render()
+  res.status()
+  res.sendStatus()
+})
+*/
+// 路径参数可以通过 req.params 获取
 
 const PORT = process.env.PORT || 3000
 

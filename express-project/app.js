@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3000
 
 // 处理接收的数据格式 解析客户端请求
 app.use(express.json())
+// 解析格式
 app.use(express.urlencoded())
 // 处理静态资源请求，全部转发到public目录下
 app.use(express.static('public'))

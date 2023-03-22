@@ -17,6 +17,7 @@ main()
 })
 
 module.exports = {
+  // 集合的名字需要首字母大写
   UserModel:  mongoose.model('User', userSchema)
 }
 

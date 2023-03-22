@@ -4,7 +4,7 @@ const cliCommonder = function (program) {
   program
   // 处理自定义命令
   .command('create <project> [other...]')
-  // 别命
+  // 别名
   .alias('crt')
   // 描述
   .description('创建项目')

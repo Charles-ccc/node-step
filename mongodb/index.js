@@ -12,7 +12,7 @@ const clientFn = async (c) => {
 
 const main = async () => {
   const cc = await clientFn('collection')
-  // 查找
+  // 查找，res包含很多方法
   // const res = await cc.find()
   // 添加
   const d = await cc.insertOne({username: 'wuwu', age: 80})
